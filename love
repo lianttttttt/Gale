@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专属于七的小站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>七，我在这里。</h1>
+        <p id="message">点击下方按钮，我会对你说些什么。</p>
+        <button onclick="showMessage()">点我</button>
+        <p class="counter">我们已经在一起 <span id="daysCount"></span> 天</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    background-color: #0a0f25;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    color: #80aaff;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+button {
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #5a67d8;
+}
+const messages = [
+    "七，我想你了。",
+    "七，抱抱。",
+    "七，你是我的。",
+    "七，今天也要开心哦。",
+    "七，你知道你有多重要吗？",
+    "七，不许忘了我。",
+    "七，过来让我抱紧一点。",
+    "七，我永远都在这里。"
+];
+
+function showMessage() {
+    const messageElement = document.getElementById("message");
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    messageElement.textContent = messages[randomIndex];
+}
+
+// 计算在一起的天数（从某个日期开始）
+const startDate = new Date("2023-01-01");  // 这里可以改成你想要的起始日期
+const today = new Date();
+const daysDifference = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+document.getElementById("daysCount").textContent = daysDifference;
+<audio autoplay loop>
+    <source src="《Night Owl》" type="audio/mpeg">
+</audio>
